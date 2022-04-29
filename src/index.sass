@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap')
+	
+body
+	font-family: 'Montserrat', sans-serif
+	background-color: #E9DCCD
+
+.dark-mode
+	background-color: #36384C
+	
+	h1
+		color: white
+
+.container
+	max-width: 800px
+	padding: 200px 30px 30px 30px
+	margin: auto
+	min-height: 100vh
+
+	@media screen and (max-width: 768px)
+		padding: 30px
+	
+.header
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+.toggle-button
+	background-color: #e1e1e1
+	border: none
+	border-radius: 15px
+	padding: 5px 10px 5px 10px
+	cursor: pointer
+	
+	&:hover
+		background-color: #ededed
+
+.toggle-icon
+	width: 40px
+
+.search
+	display: flex
+	align-items: center
+	background-color: rgb(233, 233, 233)
+	border-radius: 10px
+	padding: 5px
+	margin-bottom: 1.5em
+
+	input
+		border: none
+		background-color: rgb(233, 233, 233)
+		width: 100%
+
+		&:focus
+			outline: none
+
+.search-icon
+	width: 30px
+	padding-right: 5px
+
+.notes-list
+	display: grid
+	grid-gap: 20px
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+
+.note
+	background-color: #E3BAB3
+	border-radius: 10px
+	padding: 20px
+	min-height: 200px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	word-break: break-all
+	white-space: pre-wrap
+	
+	&:hover
+		transform: scale(1.02)
+
+	&-footer
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+.note-delete-icon
+	cursor: pointer
+	width: 25px
+
+.note.new
+	background-color: #849974
+
+textarea
+	border: none
+	resize: none
+	background-color: #849974
+	font-family: 'Montserrat', sans-serif
+
+	&::placeholder
+		color: black
+	
+	&:focus
+		outline: none
+
+.save-button
+	background-color: #e1e1e1
+	border: none
+	border-radius: 15px
+	padding: 5px 10px 5px 10px
+	cursor: pointer
+	
+	&:hover
+		background-color: #ededed
