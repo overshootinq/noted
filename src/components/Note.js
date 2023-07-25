@@ -1,12 +1,30 @@
 import deleteIcon from "../assets/icons/delete_icon.svg";
+import editIcon from "../assets/icons/edit_icon.svg";
 
-const Note = ({ id, text, date, handleDeleteNote }) => {
+const Note = ({
+  note,
+  handleDeleteNote,
+  handleEditNoteClick,
+}) => {
   return (
     <div className="note">
-      <span>{text}</span>
+      <span>{note.text}</span>
       <div className="note-footer">
-        <p>{date}</p>
-          <img className="note-delete-icon" src={deleteIcon} alt="Delete" onClick={() => handleDeleteNote(id)}/>
+        <p>{note.date}</p>
+        <div>
+          <img
+            className="note-edit-icon"
+            src={editIcon}
+            alt="Edit"
+            onClick={(event) => handleEditNoteClick(event, note.id)}
+          />
+          <img
+            className="note-delete-icon"
+            src={deleteIcon}
+            alt="Delete"
+            onClick={() => handleDeleteNote(note.id)}
+          />
+        </div>
       </div>
     </div>
   );

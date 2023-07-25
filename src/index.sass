@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap')
-	
+
 body
+	margin: auto
 	font-family: 'Montserrat', sans-serif
 	background-color: #E9DCCD
 
@@ -81,24 +82,56 @@ body
 		align-items: center
 		justify-content: space-between
 
+	span
+		font-size: 13.5px
+	
 .note-delete-icon
 	cursor: pointer
 	width: 25px
 
+.note-edit-icon
+	cursor: pointer
+	width: 25px
+	padding-right: 5px
+
+.note-check-icon
+	cursor: pointer
+	width: 25px
+
+.note-cancel-icon
+	cursor: pointer
+	width: 25px
+	padding-right: 5px
+
 .note.new
 	background-color: #849974
 
-textarea
-	border: none
-	resize: none
-	background-color: #849974
-	font-family: 'Montserrat', sans-serif
+	textarea
+		border: none
+		resize: none
+		background-color: #849974
+		font-family: 'Montserrat', sans-serif
 
-	&::placeholder
-		color: black
-	
-	&:focus
-		outline: none
+		&::placeholder
+			color: black
+		
+		&:focus
+			outline: none
+
+.note.editable
+	background-color: #613A43
+
+	textarea
+		border: none
+		resize: none
+		background-color: #613A43
+		font-family: 'Montserrat', sans-serif
+
+		&::placeholder
+			color: black
+		
+		&:focus
+			outline: none
 
 .save-button
 	background-color: #e1e1e1

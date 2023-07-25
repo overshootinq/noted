@@ -1,19 +1,42 @@
+import { Fragment } from "react";
 import Note from "./Note";
-import AddNote from "./AddNote"
+import EditableNote from "./EditableNote";
+import AddNote from "./AddNote";
 
-const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
+const NotesList = ({
+  notes,
+  editNoteId,
+  editNoteData,
+  handleAddNote,
+  handleDeleteNote,
+  handleEditNoteClick,
+  handleEditNoteCancel,
+  handleEditNoteChange,
+  handleEditNoteSubmit,
+}) => {
   return (
     <div className="notes-list">
       {notes.map((note) => (
-        <Note
-            key={note.id}
-            id={note.id}
-            text={note.text}
-            date={note.date}
-            handleDeleteNote={handleDeleteNote}
-        />
+
+        <Fragment key={note.id}>
+          {editNoteId === note.id ? ( 
+            <EditableNote
+              note={note}
+              editNoteData={editNoteData}
+              handleEditNoteCancel={handleEditNoteCancel}
+              handleEditNoteChange={handleEditNoteChange}
+              handleEditNoteSubmit={handleEditNoteSubmit}
+            />
+          ) : (
+            <Note
+              note={note}
+              handleDeleteNote={handleDeleteNote}
+              handleEditNoteClick={handleEditNoteClick}
+            />
+          )}
+        </Fragment>
       ))}
-      <AddNote handleAddNote={handleAddNote}/>
+      <AddNote handleAddNote={handleAddNote} />
     </div>
   );
 };
